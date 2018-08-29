@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Windows.Input;
 
 namespace AirMVVM.Commands
 {
-    public class SingleExecutionCommand : BaseCommand
+    public class SequentialCommand : BaseCommand
     {
-        private readonly Action _execute;
-        private readonly Action<object> _executeWithParam;
+        private readonly Action<Action> _execute;
+        private readonly Action<object, Action> _executeWithParam;
 
         private bool _commandStarted = false;
 
-        public SingleExecutionCommand(Action execute)
+        public SequentialCommand(Action<Action> execute)
         {
             if (execute == null)
             {
@@ -20,7 +20,7 @@ namespace AirMVVM.Commands
             _executeWithParam = null;
         }
 
-        public SingleExecutionCommand(Action<object> execute)
+        public SequentialCommand(Action<object, Action> execute)
         {
             if (execute == null)
             {
@@ -43,8 +43,14 @@ namespace AirMVVM.Commands
             }
             _commandStarted = true;
             RaiseCanExecuteChanged();
-            _execute?.Invoke();
-            _executeWithParam?.Invoke(parameter);
+            _execute?.Invoke(CommandFinishedCallback);
+            _executeWithParam?.Invoke(parameter, CommandFinishedCallback);
+        }
+
+        private void CommandFinishedCallback()
+        {
+            _commandStarted = false;
+            RaiseCanExecuteChanged();
         }
     }
 }
