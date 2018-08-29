@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Viridovics</Authors>
     <Description>
@@ -16,7 +16,7 @@
       https://github.com/Viridovics/AirMVVM#airmvvmcommands
     </Description>
     <PackageProjectUrl>https://github.com/Viridovics/AirMVVM</PackageProjectUrl>
-    <PackageTags>mvvm command wpf xaml</PackageTags>
+    <PackageTags>mvvm command wpf xamarin xaml</PackageTags>
     <Copyright>Copyright ©2018 Viridovics</Copyright>
     <PackageLicenseUrl>https://github.com/Viridovics/AirMVVM/blob/master/LICENSE</PackageLicenseUrl>
     <NeutralLanguage>en</NeutralLanguage>
