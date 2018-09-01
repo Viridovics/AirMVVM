@@ -41,7 +41,7 @@ After click button will be disabled. After command execution button will be enab
 ```
 
 ### RelayCommand
-This command can raise CanExecuteChanged event.
+This command can raises CanExecuteChanged event and transfers information between execute action and canExecute predicate over dictionary storage.
 
 ```
 // ViewModel part
