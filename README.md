@@ -39,3 +39,30 @@ BindingContext = viewModel;
 // Behaviour
 After click button will be disabled. After command execution button will be enabled again.
 ```
+
+### RelayCommand
+This command can raise CanExecuteChanged event.
+
+```
+// ViewModel part
+viewModel.SaveCommand = new RelayCommand(
+                                async (self, param) =>
+                                {
+                                    self.Storage["IsStarted"] = true;
+                                    self.RaiseCanExecuteChanged();
+                                    await Save(param);
+                                    self.Storage.Clear();
+                                    self.RaiseCanExecuteChanged();
+                                }, 
+                                (self, param) =>
+                                {
+                                    return !self.Storage.ContainsKey("IsStarted") && customPredicate(param);
+                                });
+BindingContext = viewModel;
+
+// View
+<Button Text="SaveText" Command="{Binding SaveCommand}" />
+
+// Behaviour
+After click button will be disabled. After command execution button will be enabled again.
+```

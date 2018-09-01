@@ -6,17 +6,17 @@
 
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Viridovics</Authors>
     <Description>
-      Small library with mvvm commands.
+      Compact library of MVVM commands. Packet contains RelayCommand, SingleExecutionCommand and SequentialCommand.
     
       Examples:
       https://github.com/Viridovics/AirMVVM#airmvvmcommands
     </Description>
     <PackageProjectUrl>https://github.com/Viridovics/AirMVVM</PackageProjectUrl>
-    <PackageTags>mvvm command wpf xamarin xaml</PackageTags>
+    <PackageTags>mvvm command wpf xamarin xaml relaycommand</PackageTags>
     <Copyright>Copyright ©2018 Viridovics</Copyright>
     <PackageLicenseUrl>https://github.com/Viridovics/AirMVVM/blob/master/LICENSE</PackageLicenseUrl>
     <NeutralLanguage>en</NeutralLanguage>
