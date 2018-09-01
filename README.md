@@ -66,3 +66,8 @@ BindingContext = viewModel;
 // Behaviour
 After click button will be disabled. After command execution button will be enabled again.
 ```
+
+# License
+Copyright (c) Viridovics
+
+Licensed under the [MIT](LICENSE) License.
